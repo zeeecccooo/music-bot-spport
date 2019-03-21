@@ -352,9 +352,12 @@ function play(guild, song) {
 **${prefix}resume**
 امر تكملة الاغنية
    
+
      prefix = **${prefix}**
      ping = **${Date.now() - message.createdTimestamp}**
+     ${prefix}invite لدعوت البوت لسيرفرك
 `);
+    
 
 }
 });
