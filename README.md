@@ -1,1 +1,1 @@
-# music-bot-spport
+# Quick-MuS
