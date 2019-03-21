@@ -11,7 +11,7 @@ const client = new Discord.Client();
 
 client.on('ready', function(){
     var ms = 3000 ;
-    var setGame = ['$help','Type ahelp'];
+    var setGame = ['$help','$invite'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -357,6 +357,18 @@ function play(guild, song) {
 `);
 
 }
+});
+
+client.on("message", async message => {
+    if(message.content.startsWith(prefix + "invite")) {
+        let invite = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(message.author.username, message.author.displayAvatarURL)
+            .setThumbnail(message.author.avatarURL)
+            .setTitle("**Click Here To Invite The Bot To Your Server :sparkling_heart:**")
+            .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`);
+            message.channel.sendEmbed(invite);
+    }
 });
 
 client.login("NTU4Mzc0MTk1MjgxNzg4OTI5.D3V6UA.LG2wS3kERZih37cp7rpBvYXUmTQ");
